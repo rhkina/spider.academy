@@ -13,30 +13,29 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <section className='h-screen w-full  bg-neutral-950 rounded-md  !overflow-visible relative flex flex-col items-center  antialiased'>
-        <div className='absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]'></div>
+      <section className='h-screen w-full  bg-background rounded-md  !overflow-visible relative flex flex-col items-center  antialiased'>
         <div className='flex flex-col mt-[100px] md:mt-[-50px]'>
           <ContainerScroll
             titleComponent={
               <div className='flex items-center flex-col'>
                 <div className='flex items-center gap-3'>
                   <Image
-                    src='/logo.svg'
-                    width={60}
-                    height={60}
+                    src='/animated-logo.gif'
+                    width={100}
+                    height={100}
                     alt='logo'
                     className='shadow-sm'
                   />
 
                   <span
-                    className={`${slackey.className} text-3xl mt-10 mb-10 text-white`}
+                    className={`${slackey.className} text-3xl mt-10 mb-10 text-primary-background`}
                   >
                     Spider.academy
                   </span>
                 </div>
                 <Button
                   size={'lg'}
-                  className='p-8 mb-8 text-2xl w-fit border-t-2 
+                  className='p-7 mb-8 text-2xl w-fit border-t-2 
                   rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white 
                   group transition-all flex items-center justify-center gap-4 
                   hover:shadow-xl hover:shadow-neutral-500 duration-500'
@@ -44,7 +43,7 @@ export default function Home() {
                   <span
                     className='bg-clip-text text-transparent bg-gradient-to-r
                    from-neutral-500 to-neutral-600  md:text-center font-sans 
-                   group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black'
+                   group-hover:bg-gradient-to-b group-hover:from-black goup-hover:to-black'
                   >
                     Start For FREE
                   </span>

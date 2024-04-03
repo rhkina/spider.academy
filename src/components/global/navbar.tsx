@@ -4,20 +4,23 @@ import { slackey } from '@/lib/fonts'
 import Link from 'next/link'
 import { MenuIcon } from 'lucide-react'
 import { ModeToggle } from './mode-toggle'
+import { Button } from '../ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 type Props = {}
 const Navbar = async (props: Props) => {
   return (
     <header
       className='fixed right-0 left-0 top-0 py-2 px-4 bg-background/40
-    backdrop-blur-lg z-[50] flex items-center border-b-[1px] border-neutral-900 
+    backdrop-blur-lg z-[50] flex items-center border-b-[1px] border-gray-700/50 
     justify-between'
     >
       <aside className='flex items-center gap-[6px]'>
         <Image
           src={'/logo.svg'}
-          width={30}
-          height={30}
+          width={40}
+          height={40}
           alt='logo'
           className='shadow-sm hidden dark:block'
         />
@@ -36,42 +39,76 @@ const Navbar = async (props: Props) => {
         className='absolute left-[50%] top-[50%] transform translate-x-[-50%] 
       translate-y-[-50%] hidden md:block'
       >
-        <ul className='flex items-center gap-4 list-none text-sm'>
+        <ul className='flex items-center list-none'>
           <li>
-            <Link href='#'>Products</Link>
+            <Link
+              href='#'
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'rounded-full'
+              )}
+            >
+              Courses
+            </Link>
           </li>
           <li>
-            <Link href='#'>Pricing</Link>
+            <Link
+              href='#'
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'rounded-full'
+              )}
+            >
+              Pricing
+            </Link>
           </li>
           <li>
-            <Link href='#'>Clients</Link>
+            <Link
+              href='#'
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'rounded-full'
+              )}
+            >
+              Blog
+            </Link>
           </li>
           <li>
-            <Link href='#'>Resources</Link>
+            <Link
+              href='#'
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'rounded-full'
+              )}
+            >
+              Docs
+            </Link>
           </li>
           <li>
-            <Link href='#'>Documentation</Link>
-          </li>
-          <li>
-            <Link href='#'>Enterprise</Link>
+            <Link
+              href='#'
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'rounded-full'
+              )}
+            >
+              Info
+            </Link>
           </li>
         </ul>
       </nav>
       <aside className='flex items-center gap-4'>
+        <Link
+          href='#'
+          className={cn(buttonVariants({ variant: 'ghost' }), 'rounded-full')}
+        >
+          {
+            // WIP: Wire up user
+            false ? 'Dashboard' : 'Get Started'
+          }
+        </Link>
         <ModeToggle />
 
-        <Link
-          href='/dashboard'
-          className='relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-1 focus:ring-slate-400 focus:ring-offset-1 focus:ring-offset-slate-50'
-        >
-          <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
-          <span className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'>
-            {
-              // WIP: Wire up user
-              true ? 'Dashboard' : 'Get Started'
-            }
-          </span>
-        </Link>
         {
           // WIP: Wire up user
         }

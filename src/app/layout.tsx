@@ -4,7 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/providers/theme-provider'
 
 export const metadata: Metadata = {
-  title: 'Spider.academy',
+  title: 'Spider.academy | Learning is meant to be fun',
   description: 'Learning is meant be exciting.',
 }
 
