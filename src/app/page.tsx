@@ -1,58 +1,48 @@
-import { HeroParallax } from '@/components/global/connect-parallax'
-import { ContainerScroll } from '@/components/global/container-scroll-animation'
-import { InfiniteMovingCards } from '@/components/global/infinite-moving-cards'
-import { LampEffect } from '@/components/global/lamp'
-import Navbar from '@/components/global/navbar'
-import PricingCard from '@/components/global/pricing-card'
-import { Button } from '@/components/ui/button'
-import { clients, products } from '@/lib/constants'
-import { slackey } from '@/lib/fonts'
-import Image from 'next/image'
+import { HeroParallax } from "@/components/global/connect-parallax";
+import { ContainerScroll } from "@/components/global/container-scroll-animation";
+import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
+import { LampEffect } from "@/components/global/lamp";
+import Navbar from "@/components/global/navbar";
+import PricingCard from "@/components/global/pricing-card";
+import { Button } from "@/components/ui/button";
+import { clients, products } from "@/lib/constants";
+import { slackey } from "@/lib/fonts";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <section className='h-screen w-full  bg-background rounded-md  !overflow-visible relative flex flex-col items-center  antialiased'>
-        <div className='flex flex-col mt-[100px] md:mt-[-50px]'>
+      <section className="relative flex  h-screen w-full  flex-col items-center !overflow-visible rounded-md bg-background  antialiased">
+        <div className="mt-[100px] flex flex-col md:mt-[-50px]">
           <ContainerScroll
             titleComponent={
-              <div className='flex items-center flex-col'>
-                <div className='flex items-center gap-3'>
+              <div className="flex flex-col items-center">
+                <div className="flex items-center gap-3">
                   <Image
-                    src='/animated-logo.gif'
+                    src="/animated-logo.gif"
                     width={100}
                     height={100}
-                    alt='logo'
-                    className='shadow-sm'
+                    alt="logo"
                   />
 
                   <span
-                    className={`${slackey.className} text-3xl mt-10 mb-10 text-primary-background`}
+                    className={`${slackey.className} text-primary-background mb-10 mt-10 text-3xl`}
                   >
                     Spider.academy
                   </span>
                 </div>
                 <Button
-                  size={'lg'}
-                  className='p-7 mb-8 text-2xl w-fit border-t-2 
-                  rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white 
-                  group transition-all flex items-center justify-center gap-4 
-                  hover:shadow-xl hover:shadow-neutral-500 duration-500'
+                  size={"lg"}
+                  className="mb-8 flex items-center 
+                  justify-center rounded-full bg-primary px-10 py-8 text-xl"
                 >
-                  <span
-                    className='bg-clip-text text-transparent bg-gradient-to-r
-                   from-neutral-500 to-neutral-600  md:text-center font-sans 
-                   group-hover:bg-gradient-to-b group-hover:from-black goup-hover:to-black'
-                  >
-                    Start For FREE
-                  </span>
+                  Start For FREE
                 </Button>
 
                 <h1
-                  className='text-5xl text-balance md:text-6xl  bg-clip-text 
-                text-transparent bg-gradient-to-b from-white to-neutral-600 
-                font-sans font-bold mb-[-20px] md:mb-5'
+                  className="mb-[-20px] text-balance  font-sans text-5xl 
+                font-bold  md:mb-5 md:text-6xl"
                 >
                   Learning is meant to be fun
                 </h1>
@@ -61,40 +51,40 @@ export default function Home() {
           >
             <Image
               src={`/temp-banner.png`}
-              alt='hero'
+              alt="hero"
               height={720}
               width={1400}
-              className='mx-auto rounded-2xl object-cover h-full object-left-top'
+              className="mx-auto h-full rounded-2xl object-cover object-left-top"
               draggable={false}
             />
           </ContainerScroll>
         </div>
       </section>
-      <div className='flex items-center flex-col'>
+      <div className="flex flex-col items-center">
         <InfiniteMovingCards
-          className='md:mt-[18rem] mt-[-100px]'
+          className="mt-[-100px] md:mt-[18rem]"
           items={clients}
-          direction='right'
-          speed='slow'
+          direction="right"
+          speed="slow"
         />
       </div>
       <section>
         <HeroParallax products={products}></HeroParallax>
       </section>
-      <section className='mt-[-200px] mb-[200px] h-fit'>
-        <LampEffect className='text-4xlmd:text-6xl font-bold mt-[-100px] pb-10'>
+      <section className="mb-[200px] mt-[-200px] h-fit">
+        <LampEffect className="text-4xlmd:text-6xl mt-[-100px] pb-10 font-bold">
           Plans that <br /> fit you best
         </LampEffect>
         <div
-          className='flex flex-wrap items-center justify-center flex-col 
-        md:flex-row gap-8 -mt-72'
+          className="-mt-72 flex flex-col flex-wrap items-center 
+        justify-center gap-8 md:flex-row"
         >
           <PricingCard />
           <PricingCard />
           <PricingCard />
         </div>
       </section>
-      <section className='h-full'></section>
+      <section className="h-full"></section>
     </main>
-  )
+  );
 }
