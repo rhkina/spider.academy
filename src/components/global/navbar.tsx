@@ -26,8 +26,8 @@ const Navbar = async (props: Props) => {
         />
         <Image
           src={"/logo-light.svg"}
-          width={30}
-          height={30}
+          width={40}
+          height={40}
           alt="logo"
           className="block dark:hidden"
         />
@@ -38,43 +38,46 @@ const Navbar = async (props: Props) => {
       <nav className="hidden gap-6 md:flex">
         <a
           href="/courses"
-          className="flex items-center text-lg font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm"
+          className="flex items-center text-base font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Courses
         </a>
         <a
           href="/pricing"
-          className="flex items-center text-lg font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm"
+          className="flex items-center font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Pricing
         </a>
         <a
           href="/blog"
-          className="flex items-center text-lg font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm"
+          className="flex items-center font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Blog
         </a>
         <a
           href="/docs"
-          className="flex items-center text-lg font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm"
+          className="flex items-center font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Docs
         </a>
         <a
           href="/info"
-          className="flex items-center text-lg font-medium text-foreground/60 transition-colors hover:text-foreground/80 sm:text-sm"
+          className="flex items-center font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Info
         </a>
       </nav>
-      <aside className="flex items-center gap-4">
+      <aside className="flex items-center gap-2">
         <Link
           href="#"
-          className={cn(buttonVariants({ variant: "ghost" }), "rounded-full")}
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "rounded-full font-medium text-foreground/60",
+          )}
         >
           {
             // WIP: Wire up user
-            false ? "Dashboard" : "Get Started"
+            true ? "Dashboard" : "Get Started"
           }
         </Link>
         <ModeToggle />

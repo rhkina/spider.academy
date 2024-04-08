@@ -1,90 +1,63 @@
-import { HeroParallax } from "@/components/global/connect-parallax";
-import { ContainerScroll } from "@/components/global/container-scroll-animation";
+import BigLogo from "@/components/global/big-logo";
 import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
 import { LampEffect } from "@/components/global/lamp";
-import Navbar from "@/components/global/navbar";
+import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 import PricingCard from "@/components/global/pricing-card";
 import { Button } from "@/components/ui/button";
 import { clients, products } from "@/lib/constants";
-import { slackey } from "@/lib/fonts";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <section className="relative flex  h-screen w-full  flex-col items-center !overflow-visible rounded-md bg-background  antialiased">
-        <div className="mt-[100px] flex flex-col md:mt-[-50px]">
-          <ContainerScroll
-            titleComponent={
-              <div className="flex flex-col items-center">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/animated-logo.gif"
-                    width={100}
-                    height={100}
-                    alt="logo"
-                  />
+    <>
+      <MaxWidthWrapper>
+        <div className="mx-auto flex max-w-6xl flex-col items-center py-20 text-center">
+          <div className="flex flex-col ">
+            <div className="flex flex-col items-center">
+              <BigLogo />
+              <Button
+                size={"lg"}
+                className="mb-10 mt-8 flex items-center justify-center 
+                  rounded-full px-10 py-8 text-xl font-black"
+              >
+                Start for FREE
+              </Button>
 
-                  <span
-                    className={`${slackey.className} text-primary-background mb-10 mt-10 text-3xl`}
-                  >
-                    Spider.academy
-                  </span>
-                </div>
-                <Button
-                  size={"lg"}
-                  className="mb-8 flex items-center 
-                  justify-center rounded-full bg-primary px-10 py-8 text-xl"
-                >
-                  Start For FREE
-                </Button>
-
-                <h1
-                  className="mb-[-20px] text-balance  font-sans text-5xl 
-                font-bold  md:mb-5 md:text-6xl"
-                >
-                  Learning is meant to be fun
-                </h1>
-              </div>
-            }
-          >
+              <h1
+                className="text-balance text-center font-sans 
+                text-5xl font-bold md:mb-6 md:text-6xl"
+              >
+                Learning is meant to be fun
+              </h1>
+            </div>
             <Image
-              src={`/temp-banner.png`}
+              src={"/temp-banner.png"}
               alt="hero"
               height={720}
               width={1400}
-              className="mx-auto h-full rounded-2xl object-cover object-left-top"
+              className="mx-auto  w-full max-w-5xl rounded-[30px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl md:p-6"
               draggable={false}
             />
-          </ContainerScroll>
+          </div>
         </div>
-      </section>
-      <div className="flex flex-col items-center">
+      </MaxWidthWrapper>
+      <div className="flex flex-col items-center bg-black/50">
         <InfiniteMovingCards
-          className="mt-[-100px] md:mt-[18rem]"
+          className=""
           items={clients}
           direction="right"
           speed="slow"
         />
       </div>
-      <section>
-        <HeroParallax products={products}></HeroParallax>
-      </section>
-      <section className="mb-[200px] mt-[-200px] h-fit">
-        <LampEffect className="text-4xlmd:text-6xl mt-[-100px] pb-10 font-bold">
-          Plans that <br /> fit you best
+      <section className="h-fit">
+        <LampEffect title="Plans that fit you best">
+          <div className="mx-auto flex flex-row flex-wrap items-center justify-between gap-8">
+            <PricingCard />
+            <PricingCard />
+          </div>
         </LampEffect>
-        <div
-          className="-mt-72 flex flex-col flex-wrap items-center 
-        justify-center gap-8 md:flex-row"
-        >
-          <PricingCard />
-          <PricingCard />
-          <PricingCard />
-        </div>
       </section>
       <section className="h-full"></section>
-    </main>
+    </>
   );
 }
