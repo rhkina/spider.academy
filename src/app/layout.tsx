@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={dmsans.className}>
+      <body className="{dmsans.className} bg-gradient">
         <main className="relative flex min-h-screen flex-col">
           <ThemeProvider
             attribute="class"

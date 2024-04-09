@@ -49,14 +49,29 @@ export default function Home() {
           speed="slow"
         />
       </div>
-      <section className="h-fit">
-        <LampEffect title="Plans that fit you best">
-          <div className="mx-auto flex flex-row flex-wrap items-center justify-between gap-8">
-            <PricingCard />
-            <PricingCard />
+      <MaxWidthWrapper>
+        <section className="mb-12 mt-16 h-fit ">
+          <h1
+            className="mb-4 text-balance text-center font-sans 
+                text-4xl font-bold md:mb-6 md:text-5xl"
+          >
+            Plans that fit you Better
+          </h1>
+          <div className="flex flex-auto flex-wrap items-center justify-center gap-8">
+            <PricingCard
+              title="Hobby"
+              price={0}
+              buttonLabel="Get Started Now"
+            />
+            <PricingCard title="Pro" price={20} buttonLabel="Get Started Now" />
+            <PricingCard
+              title="Business"
+              price={50}
+              buttonLabel="Get Started Now"
+            />
           </div>
-        </LampEffect>
-      </section>
+        </section>
+      </MaxWidthWrapper>
       <section className="h-full"></section>
     </>
   );

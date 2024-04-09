@@ -19,8 +19,18 @@
   );
 }
 
+.bg-gradient {
+  background: var(--gradient);
+}
+
 @layer base {
   :root {
+    --gradient: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(242, 254, 255, 1) 40%,
+      rgba(255, 255, 255, 1) 100%
+    );
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -44,6 +54,12 @@
   }
 
   .dark {
+    --gradient: linear-gradient(
+      313deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 87, 1) 59%,
+      rgba(0, 0, 0, 1) 100%
+    );
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
