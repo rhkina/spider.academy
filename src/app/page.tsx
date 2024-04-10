@@ -1,6 +1,5 @@
 import BigLogo from "@/components/global/big-logo";
 import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
-import { LampEffect } from "@/components/global/lamp";
 import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 import PricingCard from "@/components/global/pricing-card";
 import { Button } from "@/components/ui/button";
@@ -55,15 +54,20 @@ export default function Home() {
             className="mb-4 text-balance text-center font-sans 
                 text-4xl font-bold md:mb-6 md:text-5xl"
           >
-            Plans that fit you Better
+            Plans that fit you better
           </h1>
           <div className="flex flex-auto flex-wrap items-center justify-center gap-8">
             <PricingCard
-              title="Hobby"
+              title="Try out"
               price={0}
               buttonLabel="Get Started Now"
             />
-            <PricingCard title="Pro" price={20} buttonLabel="Get Started Now" />
+            <PricingCard
+              title="Entry"
+              price={20}
+              mostPopular={true}
+              buttonLabel="Get Started Now"
+            />
             <PricingCard
               title="Business"
               price={50}

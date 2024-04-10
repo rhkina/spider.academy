@@ -9,60 +9,48 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 type PricingCardProps = {
   title: string;
+  description?: string;
   price: number;
   buttonLabel: string;
+  mostPopular?: boolean;
+  planList?: string[];
   className?: string;
 };
 const PricingCard = ({
   title,
+  description,
   price,
   buttonLabel,
+  mostPopular,
   className,
 }: PricingCardProps) => {
   return (
-    <Card className="w-min-[150px] z-[49]">
+    <Card
+      className={cn(
+        "z-[49] w-[320px]",
+        mostPopular ? "border-2 border-accent-foreground" : "",
+      )}
+    >
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
+        <h2 className="text-xl">
+          {price === 0 ? "FREE" : "$ " + price + "/month"}
+        </h2>
         <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">$ {price}</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+          <div className="grid w-full items-center gap-[8px]">
+            <div className="flex flex-col space-y-[8px]"></div>
+            <div className="flex flex-col space-y-[8px]"></div>
           </div>
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
         <Button>{buttonLabel}</Button>
       </CardFooter>
     </Card>
