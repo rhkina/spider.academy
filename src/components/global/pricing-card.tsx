@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -9,49 +10,56 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { cn } from "@/lib/utils";
 
 type PricingCardProps = {
   title: string;
-  description?: string;
+  subtitle?: string;
   price: number;
   buttonLabel: string;
-  mostPopular?: boolean;
-  planList?: string[];
+  bestChoice?: boolean;
   className?: string;
+  children?: React.ReactNode;
 };
 const PricingCard = ({
   title,
-  description,
+  subtitle,
   price,
   buttonLabel,
-  mostPopular,
+  bestChoice,
   className,
+  children,
 }: PricingCardProps) => {
   return (
     <Card
       className={cn(
-        "z-[49] w-[320px]",
-        mostPopular ? "border-2 border-accent-foreground" : "",
+        bestChoice
+          ? "z-[49] w-[300px] border-2 border-card-foreground shadow-lg"
+          : "z-[49] w-[300px]",
+        "flex w-full max-w-screen-sm flex-grow flex-col items-start justify-center",
+        className,
       )}
     >
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle className="text-xl">{title}</CardTitle>
+        <CardDescription>{subtitle}</CardDescription>
       </CardHeader>
       <CardContent>
-        <h2 className="text-xl">
-          {price === 0 ? "FREE" : "$ " + price + "/month"}
-        </h2>
         <form>
-          <div className="grid w-full items-center gap-[8px]">
-            <div className="flex flex-col space-y-[8px]"></div>
-            <div className="flex flex-col space-y-[8px]"></div>
+          <div className="inline-block text-4xl font-semibold">
+            {price === 0 ? "Free" : "$" + price}
           </div>
+          <div className="inline-block">/month</div>
         </form>
+        <div className="mt-4">{children}</div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button>{buttonLabel}</Button>
+      <CardFooter className="flex items-center justify-center">
+        <div className="flex items-center justify-center">
+          <Button className={bestChoice ? "p-6 font-semibold" : ""}>
+            {buttonLabel}
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );

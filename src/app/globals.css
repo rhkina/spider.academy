@@ -11,13 +11,6 @@
 *::-webkit-scrollbar {
   display: none !important;
 }
-.bg-radial-gradient {
-  background-image: radial-gradient(
-    circle at 10% 20%,
-    rgba(4, 159, 108, 1) 0%,
-    rgba(194, 254, 113, 1) 90.1%
-  );
-}
 
 .bg-gradient {
   background: var(--gradient);
@@ -25,12 +18,7 @@
 
 @layer base {
   :root {
-    --gradient: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(242, 254, 255, 1) 40%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    --gradient: radial-gradient(#e5e7eb_1px, transparent_1px);
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -54,11 +42,10 @@
   }
 
   .dark {
-    --gradient: linear-gradient(
-      313deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 87, 1) 59%,
-      rgba(0, 0, 0, 1) 100%
+    --gradient: radial-gradient(
+      circle_500px_at_50%_200px,
+      #3e3e3e,
+      transparent
     );
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

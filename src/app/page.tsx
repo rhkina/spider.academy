@@ -4,6 +4,7 @@ import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 import PricingCard from "@/components/global/pricing-card";
 import { Button } from "@/components/ui/button";
 import { clients, products } from "@/lib/constants";
+import { HiCheck } from "react-icons/hi";
 import Image from "next/image";
 
 export default function Home() {
@@ -49,30 +50,70 @@ export default function Home() {
         />
       </div>
       <MaxWidthWrapper>
-        <section className="mb-12 mt-16 h-fit ">
+        <section className="mb-12 mt-16 h-fit">
           <h1
             className="mb-4 text-balance text-center font-sans 
                 text-4xl font-bold md:mb-6 md:text-5xl"
           >
-            Plans that fit you better
+            Choose the plan that fits you best
           </h1>
-          <div className="flex flex-auto flex-wrap items-center justify-center gap-8">
+          <div className="container m-auto grid grid-cols-1 justify-center gap-6 md:grid-cols-2 lg:grid-cols-3">
             <PricingCard
-              title="Try out"
+              className="h-full min-w-56 max-w-80 justify-self-center"
+              title="Hobby"
               price={0}
               buttonLabel="Get Started Now"
-            />
+            >
+              <h3 className="mt-1 text-base font-semibold">Key Features</h3>
+              <ul className="list-none gap-10">
+                <li>
+                  <HiCheck className="inline-block" /> One course
+                </li>
+                <li>
+                  <HiCheck className="inline-block" /> E-mail support
+                </li>
+              </ul>
+            </PricingCard>
             <PricingCard
-              title="Entry"
+              title="Pro"
+              className="h-full min-w-56 max-w-80 justify-self-center"
               price={20}
-              mostPopular={true}
+              bestChoice={true}
               buttonLabel="Get Started Now"
-            />
+            >
+              <h3 className="mt-1 text-base font-semibold">Key Features</h3>
+              <ul className="list-none gap-10">
+                <li>
+                  <HiCheck className="inline-block" /> Ten courses
+                </li>
+                <li>
+                  <HiCheck className="inline-block" /> Marketing support
+                </li>
+
+                <li>
+                  <HiCheck className="inline-block" /> Chat support
+                </li>
+              </ul>
+            </PricingCard>
             <PricingCard
               title="Business"
+              className="h-full min-w-56 max-w-80 justify-self-center"
               price={50}
               buttonLabel="Get Started Now"
-            />
+            >
+              <h3 className="mt-1 text-base font-semibold">Key Features</h3>
+              <ul className="list-none gap-10">
+                <li>
+                  <HiCheck className="inline-block" /> Unlimited courses
+                </li>
+                <li>
+                  <HiCheck className="inline-block" /> Marketing support
+                </li>
+                <li>
+                  <HiCheck className="inline-block" /> Chat & video chat support
+                </li>
+              </ul>
+            </PricingCard>
           </div>
         </section>
       </MaxWidthWrapper>
