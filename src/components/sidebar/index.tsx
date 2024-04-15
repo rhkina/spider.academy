@@ -5,7 +5,12 @@ import Image from 'next/image'
 import { slackey } from '@/lib/fonts'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { menuOptions } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
@@ -62,11 +67,16 @@ const Sidebar = (props: Props) => {
                         }
                       )}
                     >
-                      <menuItem.Component selected={pathName === menuItem.href} />
+                      <menuItem.Component
+                        selected={pathName === menuItem.href}
+                      />
                     </Link>
                   </li>
                 </TooltipTrigger>
-                <TooltipContent side="right" className="bg-background backdrop-blur-xl">
+                <TooltipContent
+                  side="right"
+                  className="bg-background backdrop-blur-xl"
+                >
                   <p>{menuItem.name}</p>
                 </TooltipContent>
               </Tooltip>
@@ -74,21 +84,24 @@ const Sidebar = (props: Props) => {
           ))}
         </TooltipProvider>
         <Separator />
-        <div className="flex h-56 flex-col items-center gap-9 overflow-scroll rounded-full border-[1px] px-2 py-4 dark:bg-background/30">
+        <div className="flex h-56 flex-col items-center gap-8 overflow-scroll rounded-full border-[1px] p-2 dark:bg-background/30">
           <div className="relative rounded-full border-[1px] p-2 dark:border-t-[2px] dark:border-t-[#353346] dark:bg-[#353346]/70">
-            <LucideMousePointerClick className="size={18} dark:text-foreground" />
+            <LucideMousePointerClick
+              size={18}
+              className="dark:text-foreground"
+            />
             <div className="absolute -bottom-[30px] left-1/2 h-6 translate-x-[-50%] transform border-l-2 border-muted-foreground/50 " />
           </div>
           <div className="relative rounded-full border-[1px] p-2 dark:border-t-[2px] dark:border-t-[#353346] dark:bg-[#353346]/70">
-            <GitBranch className="size={18} dark:text-foreground" />
+            <GitBranch size={18} className="dark:text-foreground" />
             <div className="absolute -bottom-[30px] left-1/2 h-6 translate-x-[-50%] transform border-l-2 border-muted-foreground/50 " />
           </div>
           <div className="relative rounded-full border-[1px] p-2 dark:border-t-[2px] dark:border-t-[#353346] dark:bg-[#353346]/70">
-            <Database className="size={18} dark:text-foreground" />
+            <Database size={18} className="dark:text-foreground" />
             <div className="absolute -bottom-[30px] left-1/2 h-6 translate-x-[-50%] transform border-l-2 border-muted-foreground/50 " />
           </div>
           <div className="relative rounded-full border-[1px] p-2 dark:border-t-[2px] dark:border-t-[#353346] dark:bg-[#353346]/70">
-            <GitBranch className="size={18} dark:text-foreground" />
+            <GitBranch size={18} className="dark:text-foreground" />
           </div>
         </div>
       </div>

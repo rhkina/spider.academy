@@ -6,9 +6,18 @@ type Props = {}
 
 const SettingsPage = (props: Props) => {
   // WIP: Wire up Profile Picture
+  const user = {
+    name: 'Rubens Kina',
+    email: 'rhkina@gmail.com',
+  }
+
+  function onUpdate() {
+    return
+  }
+
   return (
     <>
-      <PageNavbar title="Settings" />
+      <PageNavbar title="Settings" className="sticky top-0 z-[10]" />
 
       <div className="flex flex-col gap-10 p-6">
         <div>
@@ -17,7 +26,7 @@ const SettingsPage = (props: Props) => {
             Add or update your information
           </p>
         </div>
-        <ProfileForm />
+        <ProfileForm user={user} onUpdate={onUpdate()} />
       </div>
     </>
   )
