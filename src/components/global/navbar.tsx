@@ -13,8 +13,8 @@ const Navbar = async (props: Props) => {
   return (
     <header
       className="fixed left-0 right-0 top-0 z-[50] flex items-center
-    justify-between border-b-[1px] border-gray-700/50 bg-background/40 px-4 py-2 
-    backdrop-blur-lg"
+    justify-between border-b-[1px] border-foreground/20 bg-background/40 px-4 py-2 
+   backdrop-blur-lg"
     >
       <aside className="flex items-center gap-[6px]">
         <Image
@@ -37,7 +37,7 @@ const Navbar = async (props: Props) => {
       </aside>
       <nav className="hidden gap-6 md:flex">
         <a
-          href="/courses"
+          href="/workflows"
           className="flex items-center text-base font-medium text-foreground/60 transition-colors hover:text-foreground"
         >
           Courses
@@ -69,7 +69,7 @@ const Navbar = async (props: Props) => {
       </nav>
       <aside className="flex items-center gap-2">
         <Link
-          href="#"
+          href="/dashboard"
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "rounded-full font-medium text-foreground/60",

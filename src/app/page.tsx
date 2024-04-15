@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { clients, products } from "@/lib/constants";
 import { HiCheck } from "react-icons/hi";
 import Image from "next/image";
+import Navbar from "@/components/global/navbar";
 
 export default function Home() {
   return (
     <>
       <MaxWidthWrapper>
+        <Navbar />
         <div className="mx-auto flex max-w-6xl flex-col items-center py-20 text-center">
           <div className="flex flex-col ">
             <div className="flex flex-col items-center">
