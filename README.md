@@ -1,4 +1,9 @@
 1:42:00
+
+# Spider Academy
+
+## Mind map based courses platform
+
 This project is based on [Web Prodigies](https://youtu.be/XkOXNlHJP6M?si=H6pGw4kVxh41F5n7) video.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
