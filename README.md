@@ -1,4 +1,4 @@
-1:42:00
+1:50:23
 
 # Spider Academy
 
@@ -14,12 +14,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -27,6 +21,40 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Start Prisma
+
+We are using PostgreSQL as database at [neon.tech](https://neon.tech/).
+
+Initialize Prisma ORM with the `init` command or the Prisma CLI:
+
+```bash
+npx prisma init
+```
+
+First run to spin up all the migration schemas
+
+```bash
+npx prisma generate
+```
+
+Now push the database to Neon Tech
+
+```bash
+npx prisma push
+```
+
+to generate Prisma Client.
+
+To monitor your database through local GUI run:
+
+Initialize Prisma ORM with the `init` command or the Prisma CLI:
+
+```bash
+npx prisma studio
+```
+
+Confirm if your database tables are correct at `http://localhost:5555/`
 
 ## Learn More
 

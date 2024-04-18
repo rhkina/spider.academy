@@ -1,6 +1,7 @@
 import ProfileForm from '@/components/forms/profile-form'
 import PageNavbar from '@/components/global/page-navbar'
 import React from 'react'
+import ProfilePicture from './_components/profile-picture'
 
 type Props = {}
 
@@ -26,6 +27,7 @@ const SettingsPage = (props: Props) => {
             Add or update your information
           </p>
         </div>
+        <ProfilePicture></ProfilePicture>
         <ProfileForm user={user} onUpdate={onUpdate()} />
       </div>
     </>
